@@ -1,0 +1,22 @@
+{
+  "name": "react-page-transition",
+  "version": "1.0.0",
+  "description": "Customziable page transition components for React Router",
+  "main": "lib/PageTransition.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phoenix1355/react-page-transition.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Christian H. Bohlbro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phoenix1355/react-page-transition/issues"
+  },
+  "homepage": "https://github.com/Phoenix1355/react-page-transition#readme"
+}
