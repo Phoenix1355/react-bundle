@@ -1,0 +1,21 @@
+# Trash files
+.htaccess
+.htpasswd
+sitemap.*
+*.DS_Store
+*[Tt]humbs.db
+*.Trashes
+*.sublime-*
+*.ini
+*.vscode
+
+# Node related folder and files
+npm-debug.log
+node_modules
+.sass-cache
+bower_components
+.cache
+
+# Generated folders from webpack
+dist
+public
