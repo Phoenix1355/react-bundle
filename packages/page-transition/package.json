@@ -1,0 +1,37 @@
+{
+  "name": "page-transition",
+  "version": "0.0.1",
+  "description": "Overlayed page transitions",
+  "main": "lib/bundle.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src/index.js --out-file lib/bundle.js",
+    "start": "NODE_ENV=development babel src/index.js --watch --out-file lib/bundle.js"
+  },
+  "repository": "Phoenix1355/react-bundle",
+  "keywords": [
+    "react",
+    "router",
+    "route",
+    "page",
+    "transition"
+  ],
+  "author": "Christian H. Bohlbro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phoenix1355/react-bundle/issues"
+  },
+  "homepage": "https://github.com/Phoenix1355/react-bundle#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "babel-preset-react-app": "^7.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0"
+  }
+}
