@@ -1,0 +1,7 @@
+{
+  "lib/index.min.js": {
+    "bundled": 482,
+    "minified": 230,
+    "gzipped": 177
+  }
+}

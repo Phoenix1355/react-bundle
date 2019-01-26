@@ -3,6 +3,7 @@
 <div align="center">
 
 [React](https://facebook.github.io/react/) components created with as Semantic code for better readability and SEO.
+
 *MAINLY FOR PERSONAL USE!*
 
 [![npm package](https://img.shields.io/npm/v/@chrhb/semantic-ui/latest.svg)](https://www.npmjs.com/package/@chrhb/semantic-ui)
@@ -46,10 +47,10 @@ ReactDOM.render(
 );
 ```
 
-## Examples (Not implemented yet)
+## Examples
 
-For a full use example, check out my website as [bohlbro.dk](https://bohlbro.dk) *not yet*
+For a full use example, check out my website as [bohlbro.dk](https://bohlbro.dk) *(Not implemented yet)*
 
-## Documentation (Not implemented yet either...)
+## Documentation
 
-For the full documentation, check out the [docs](https://bohlbro.dk/semantic-ui) *not yet*
+For the full documentation, check out the [docs](https://bohlbro.dk/semantic-ui) *(Not implemented yet either...)*

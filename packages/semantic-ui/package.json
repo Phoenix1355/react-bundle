@@ -2,11 +2,11 @@
   "name": "@chrhb/semantic-ui",
   "version": "0.0.1",
   "description": "Semantic React components used for easy website building",
-  "main": "lib/index.js",
+  "main": "lib/index.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production babel src/index.js --out-file lib/index.js",
-    "start": "NODE_ENV=development babel src/index.js --watch --out-file lib/index.js"
+    "build": "NODE_ENV=production rollup -c scripts/rollup.config.js",
+    "start": "NODE_ENV=development rollup -c scripts/rollup.config.js --watch"
   },
   "repository": "Phoenix1355/react-bundle",
   "keywords": [
@@ -19,18 +19,20 @@
   },
   "homepage": "https://github.com/Phoenix1355/react-bundle#readme",
   "dependencies": {
-    "elemental": "^0.6.1",
     "prop-types": "^15.6.2",
     "react": "^16.7.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/runtime": "^7.3.1",
     "autoprefixer": "^9.4.6",
-    "css-loader": "^2.1.0",
-    "extract-css-chunks-webpack-plugin": "^3.3.2",
     "node-sass": "^4.11.0",
-    "path": "^0.12.7",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "webpack": "^4.29.0"
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-postcss": "^2.0.1",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-size-snapshot": "^0.8.0",
+    "rollup-plugin-uglify": "^6.0.2"
   }
 }

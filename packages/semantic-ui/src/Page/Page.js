@@ -17,12 +17,7 @@ const Page = ({
 );
 Page.propTypes = {
     id: PropTypes.string,
-    className: PropTypes.anyOf([
-        PropTypes.string,
-        PropTypes.arrayOf(
-            PropTypes.string,
-        ),
-    ]),
+    className: PropTypes.string,
     children: PropTypes.node.isRequired,
 };
 Page.defaultProps = {
