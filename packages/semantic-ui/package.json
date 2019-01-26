@@ -1,7 +1,7 @@
 {
-  "name": "@chrhb/page-transition",
+  "name": "@chrhb/semantic-ui",
   "version": "0.0.1",
-  "description": "Overlayed page transitions",
+  "description": "Semantic React components used for easy website building",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,11 +10,7 @@
   },
   "repository": "Phoenix1355/react-bundle",
   "keywords": [
-    "react",
-    "router",
-    "route",
-    "page",
-    "transition"
+    "react"
   ],
   "author": "Christian H. Bohlbro",
   "license": "ISC",
@@ -22,13 +18,19 @@
     "url": "https://github.com/Phoenix1355/react-bundle/issues"
   },
   "homepage": "https://github.com/Phoenix1355/react-bundle#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "babel-preset-react-app": "^7.0.0"
-  },
   "dependencies": {
+    "elemental": "^0.6.1",
     "prop-types": "^15.6.2",
     "react": "^16.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.6",
+    "css-loader": "^2.1.0",
+    "extract-css-chunks-webpack-plugin": "^3.3.2",
+    "node-sass": "^4.11.0",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.29.0"
   }
 }
