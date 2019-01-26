@@ -33,7 +33,9 @@ import { Hero } from '@chrhb/semantic-ui';
 const App() => (
     <div className="site">
         <Hero title="Welcome to my website!">
-            This is the descriptive content of the hero section, that will be displayed as sub-header for the title.
+            This is the descriptive content of the hero
+            section, that will be displayed as sub-header for
+            the title.
         </Hero>
     </div>
 );
