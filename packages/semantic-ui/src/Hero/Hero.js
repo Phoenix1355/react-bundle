@@ -5,6 +5,7 @@ import styles from './hero.scss';
 
 const Hero = ({
     title,
+    description,
     children,
 }) => (
     <section className={styles.hero}>
@@ -13,7 +14,9 @@ const Hero = ({
                 <h1>{title}</h1>
             </div>
             <div className={styles.hero__content}>
-                {children}
+                { description ? (
+                    <p>{description}</p>
+                ) : children }
             </div>
         </div>
     </section>
@@ -21,7 +24,12 @@ const Hero = ({
 
 Hero.propTypes = {
     title: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
+    description: PropTypes.string,
+    children: PropTypes.node,
+};
+Hero.defaultProps = {
+    description: null,
+    children: null,
 };
 
 export default Hero;

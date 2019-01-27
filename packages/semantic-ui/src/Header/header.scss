@@ -1,0 +1,16 @@
+/// header.scss
+
+@import '../styles/globals.scss';
+
+.header {
+    .header__inner {
+        max-width: $default-width;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+.header--full {
+    .header__inner {
+        max-width: none;
+    }
+}

@@ -5,17 +5,25 @@
  */
 
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { Site } from 'semantic-ui/lib';
 
-import { Page, Hero } from '../../../packages/semantic-ui/lib';
+import Header from './Header';
+
+import HomePage from './HomePage';
+import BlogPage from './BlogPage';
+
+console.log(Header);
 
 const App = () => (
-    <Page id="home">
-        <Hero title="Welcome to my website!">
-            This is the descriptive content of the hero
-            section, that will be displayed as sub-header for
-            the title.
-        </Hero>
-    </Page>
+    <Site
+        header={Header}
+    >
+        <Switch>
+            <Route path="/semantic-ui" exact component={HomePage} />
+            <Route path="/semantic-ui/blog" component={BlogPage} />
+        </Switch>
+    </Site>
 );
 
 export default App;
