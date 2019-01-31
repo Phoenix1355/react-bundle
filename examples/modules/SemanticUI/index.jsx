@@ -13,8 +13,6 @@ import Header from './Header';
 import HomePage from './HomePage';
 import BlogPage from './BlogPage';
 
-console.log(Header);
-
 const App = () => (
     <Site
         header={Header}

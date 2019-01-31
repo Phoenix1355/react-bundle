@@ -7,19 +7,21 @@
         .hero__inner {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto;
             grid-column-gap: 40px;
             max-width: 1440px;
             width: 100%;
+            height: auto;
             margin: 0 auto;
         }
 
-        .hero__header,
-        .hero__content {
-            grid-column: 4 / span 6;
-        }
-
         .hero__header {
+            grid-area: 1 / 4 / 1 / span 6;
+
             text-align: center;
+        }
+        .hero__content {
+            grid-area: 2 / 4 / 2 / span 6;
         }
     }
     section.list {

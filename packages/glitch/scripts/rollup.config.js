@@ -1,8 +1,10 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
 import { uglify } from 'rollup-plugin-uglify';
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
+import nodeGlobals from 'rollup-plugin-node-globals';
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 
@@ -20,13 +22,18 @@ const babelOptions = {
     runtimeHelpers: true,
 };
 
+const commonjsOptions = {
+    ignoreGlobal: true,
+    include: /node_modules/,
+};
+
 const watchOptions = {
     include: './src/**',
 };
 
 const postcssOptions = {
     modules: {
-        generateScopedName: 's-ui-[local]',
+        generateScopedName: 'glitch-[local]',
     },
     plugins: [
         autoprefixer,
@@ -38,7 +45,7 @@ const devConfig = {
     output: {
         file: 'lib/index.js',
         format: 'umd',
-        name: 'semantic-ui',
+        name: 'glitch',
         globals,
     },
     watch: watchOptions,
@@ -46,6 +53,8 @@ const devConfig = {
     plugins: [
         nodeResolve(),
         babel(babelOptions),
+        commonjs(commonjsOptions),
+        nodeGlobals(),
         replace({
             'process.env.NODE_ENV': JSON.stringify('development'),
         }),
@@ -58,13 +67,15 @@ const prodConfig = {
     output: {
         file: 'lib/index.min.js',
         format: 'umd',
-        name: 'semantic-ui',
+        name: 'glitch',
         globals,
     },
     external: Object.keys(globals),
     plugins: [
         nodeResolve(),
         babel(babelOptions),
+        commonjs(commonjsOptions),
+        nodeGlobals(),
         replace({
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),

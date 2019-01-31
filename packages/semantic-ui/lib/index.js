@@ -153,8 +153,8 @@
     }
   }
 
-  var css = "/* --- Helpers --- */\n/* Variables */\n.header .header__inner {\n  max-width: 1440px;\n  padding-left: 30px;\n  padding-right: 30px; }\n\n.header--full .header__inner {\n  max-width: none; }\n";
-  var styles = {"header":"header","header__inner":"header__inner","header--full":"header--full"};
+  var css = "/* --- Helpers --- */\n/* Variables */\n.s-ui-header .s-ui-header__inner {\n  max-width: 1440px;\n  padding-left: 30px;\n  padding-right: 30px; }\n\n.s-ui-header--full .s-ui-header__inner {\n  max-width: none; }\n";
+  var styles = {"header":"s-ui-header","header__inner":"s-ui-header__inner","header--full":"s-ui-header--full"};
   styleInject(css);
 
   var _jsxFileName = "/Users/phoenix/Web Server/react-bundle/packages/semantic-ui/src/Header/Header.js";
@@ -227,8 +227,8 @@
     full: false
   };
 
-  var css$1 = "/* --- Helpers --- */\n/* Variables */\n.footer .footer__inner {\n  max-width: 1400px;\n  width: 100%;\n  margin: 0 auto;\n  padding-left: 30px;\n  padding-right: 30px; }\n";
-  var styles$1 = {"footer":"footer","footer__inner":"footer__inner"};
+  var css$1 = "/* --- Helpers --- */\n/* Variables */\n.s-ui-footer .s-ui-footer__inner {\n  max-width: 1400px;\n  width: 100%;\n  margin: 0 auto;\n  padding-left: 30px;\n  padding-right: 30px; }\n";
+  var styles$1 = {"footer":"s-ui-footer","footer__inner":"s-ui-footer__inner"};
   styleInject(css$1);
 
   var _jsxFileName$1 = "/Users/phoenix/Web Server/react-bundle/packages/semantic-ui/src/Footer/FooterColumn.js";
@@ -366,8 +366,8 @@
     children: PropTypes.node.isRequired
   };
 
-  var css$2 = "/* --- Helpers --- */\n/* Variables */\n.hero {\n  width: 100%;\n  background-color: #F2F2F2; }\n  .hero .hero__inner {\n    display: grid;\n    grid-template-columns: repeat(12, 1fr);\n    grid-template-rows: repeat(4, 25%);\n    flex-direction: column;\n    justify-content: center;\n    max-width: 1440px;\n    width: 100%;\n    max-height: 800px;\n    height: 100vh;\n    margin: 0 auto; }\n  .hero .hero__header {\n    grid-area: 2 / 4 / 2 / span 4; }\n  .hero .hero__content {\n    grid-area: 3 / 6 / 3 / span 4; }\n";
-  var styles$2 = {"hero":"hero","hero__inner":"hero__inner","hero__header":"hero__header","hero__content":"hero__content"};
+  var css$2 = "/* --- Helpers --- */\n/* Variables */\n.s-ui-hero {\n  width: 100%;\n  background-color: #F2F2F2; }\n  .s-ui-hero .s-ui-hero__inner {\n    display: grid;\n    grid-template-columns: repeat(12, 1fr);\n    grid-template-rows: repeat(4, 25%);\n    flex-direction: column;\n    justify-content: center;\n    max-width: 1440px;\n    width: 100%;\n    max-height: 800px;\n    height: 100vh;\n    margin: 0 auto; }\n  .s-ui-hero .s-ui-hero__header {\n    grid-area: 2 / 4 / 2 / span 4; }\n  .s-ui-hero .s-ui-hero__content {\n    grid-area: 3 / 6 / 3 / span 4; }\n";
+  var styles$2 = {"hero":"s-ui-hero","hero__inner":"s-ui-hero__inner","hero__header":"s-ui-hero__header","hero__content":"s-ui-hero__content"};
   styleInject(css$2);
 
   var _jsxFileName$5 = "/Users/phoenix/Web Server/react-bundle/packages/semantic-ui/src/Hero/Hero.js";

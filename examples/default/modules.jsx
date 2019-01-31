@@ -4,6 +4,7 @@
 
 import PageTransition from '../modules/PageTransition';
 import SemanticUI from '../modules/SemanticUI';
+import Glitch from '../modules/glitch';
 
 export default [
     {
@@ -19,5 +20,12 @@ export default [
         date: '26. Jan, 2019',
         to: '/sematic-ui',
         component: SemanticUI,
+    },
+    {
+        id: 3,
+        title: 'Glitch',
+        date: '30. Jan, 2019',
+        to: '/glitch',
+        component: Glitch,
     },
 ];

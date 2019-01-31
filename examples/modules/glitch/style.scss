@@ -1,0 +1,70 @@
+/**
+ * Main stylesheet
+ */
+
+@import '../../default/global';
+
+/* --- Variables --- */
+$white: #fff;
+$black: #212121;
+
+$site-width: 1440px;
+
+.page--glitch {
+
+    /* --- General --- */
+
+
+
+    /* --- Components --- */
+
+    .button {
+        position: relative;
+
+        display: inline-flex;
+        padding: 10px 20px;
+        margin-right: 20px;
+
+        background-color: transparent;
+        color: $black;
+        border: 1px solid $black;
+
+        cursor: pointer;
+    }
+
+    /* --- Sections --- */
+
+    .hero {
+        margin: 80px 0;
+
+        .hero__inner {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            max-width: $site-width;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .hero__header {
+            grid-column: 2 / span 4;
+        }
+    }
+
+    .block {
+        margin: 80px 0;
+
+        .block__inner {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            max-width: $site-width;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .block__content {
+            grid-column: 2 / span 4;
+            padding: 20px 0;
+        }
+    }
+
+}

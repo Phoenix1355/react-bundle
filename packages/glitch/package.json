@@ -1,0 +1,43 @@
+{
+  "name": "@chrhb/glitch",
+  "version": "0.0.1",
+  "description": "React library for adding glitching animations to your website",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production rollup -c scripts/rollup.config.js",
+    "start": "NODE_ENV=development rollup -c scripts/rollup.config.js --watch"
+  },
+  "repository": "Phoenix1355/react-bundle",
+  "keywords": [
+    "react"
+  ],
+  "author": "Christian H. Bohlbro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phoenix1355/react-bundle/issues"
+  },
+  "homepage": "https://github.com/Phoenix1355/react-bundle#readme",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/runtime": "^7.3.1",
+    "autoprefixer": "^9.4.7",
+    "babel-preset-react-app": "^7.0.0",
+    "node-sass": "^4.11.0",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-postcss": "^2.0.1",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-size-snapshot": "^0.8.0",
+    "rollup-plugin-uglify": "^6.0.2"
+  }
+}
