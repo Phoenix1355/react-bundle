@@ -16,7 +16,7 @@
 Semantic UI can be downloaded as an [npm package](https://www.npmjs.com/package/@chrhb/semantic-ui).
 
 ```sh
-// Using npm
+# Using npm
 npm i @chrhb/semantic-ui
 ```
 
