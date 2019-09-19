@@ -1,0 +1,38 @@
+{
+  "name": "pie-chart",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Pie Chart SVG</h1>",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production rollup -c scripts/rollup.config.js",
+    "start": "NODE_ENV=development rollup -c scripts/rollup.config.js --watch"
+  },
+  "repository": "Phoenix1355/react-bundle",
+  "author": "Christian H. Bohlbro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phoenix1355/react-bundle/issues"
+  },
+  "homepage": "https://github.com/Phoenix1355/react-bundle#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/runtime": "^7.6.0",
+    "autoprefixer": "^9.6.1",
+    "babel-preset-react-app": "^9.0.1",
+    "node-sass": "^4.12.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-size-snapshot": "^0.10.0",
+    "rollup-plugin-uglify": "^6.0.3"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0"
+  }
+}
