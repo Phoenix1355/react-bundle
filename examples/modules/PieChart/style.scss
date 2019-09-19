@@ -1,0 +1,23 @@
+/**
+ * Main stylesheet
+ */
+
+body {
+  margin: 0px;
+  box-sizing: border-box;
+
+  font-family: 'Avenir', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.page--pie-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

@@ -4,16 +4,26 @@
 
 .hero {
     width: 100%;
+    background-color: #F2F2F2;
 
     .hero__inner {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(4, 25%);
+        flex-direction: column;
+        justify-content: center;
         max-width: 1440px;
+        width: 100%;
+        max-height: 800px;
+        height: 100vh;
+        margin: 0 auto;
     }
 
     .hero__header {
-
+        grid-area: 2 / 4 / 2 / span 4;
     }
 
     .hero__content {
-
+        grid-area: 3 / 6 / 3 / span 4;
     }
 }

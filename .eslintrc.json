@@ -13,16 +13,10 @@
     },
     "rules": {
         "no-console": "off",
-        "indent": ["error", 4],
-        "comma-dangle": ["error", {
-            "arrays": "always",
-            "objects": "always",
-            "imports": "never",
-            "exports": "always",
-            "functions": "ignore"
-        }],
-        "react/jsx-indent": ["error", 4],
-        "react/jsx-indent-props": ["error", 4],
+        "indent": ["error", 2],
+        "comma-dangle": ["error", "always-multiline"],
+        "react/jsx-indent": ["error", 2],
+        "react/jsx-indent-props": ["error", 2],
         "react/jsx-filename-extension": [
             1, {
                 "extensions": [
@@ -44,7 +38,8 @@
         "import/resolver": {
             "node": {
                 "paths": [
-                    "app"
+                    "examples",
+                    "./"
                 ]
             }
         }

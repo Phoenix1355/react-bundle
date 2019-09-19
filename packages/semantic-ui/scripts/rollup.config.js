@@ -26,7 +26,7 @@ const watchOptions = {
 
 const postcssOptions = {
     modules: {
-        generateScopedName: '[local]',
+        generateScopedName: 's-ui-[local]',
     },
     plugins: [
         autoprefixer,

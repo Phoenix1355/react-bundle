@@ -7,7 +7,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { PageTransition } from '../../../packages/page-transition/lib/bundle';
+import { PageTransition } from '../../../packages/page-transition/lib';
 
 import HomePage from './Pages/Home';
 import UserPage from './Pages/User';

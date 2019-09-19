@@ -1,0 +1,13 @@
+/// footer.scss
+
+@import '../styles/globals.scss';
+
+.footer {
+    .footer__inner {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@chrhb/semantic-ui",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Semantic React components used for easy website building",
   "main": "lib/index.min.js",
   "scripts": {
