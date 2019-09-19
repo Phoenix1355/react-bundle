@@ -13,6 +13,9 @@ const Page = () => (
   <article className="page--pie-chart">
     <PieChart
       values={[10, 20, 30, 40]}
+      options={{
+        displayValues: true,
+      }}
     />
   </article>
 );

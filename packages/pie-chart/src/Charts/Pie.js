@@ -2,7 +2,7 @@
  * PieChart
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { colorFactory } from '../utils/colors';
 
@@ -10,6 +10,7 @@ console.log(colorFactory);
 
 const PieChart = ({
   values,
+  options,
   debug,
 }) => {
   const total = values.reduce((a, b) => a + b, 0);
@@ -21,9 +22,9 @@ const PieChart = ({
    * @param {Number}  percent The percentage
    * @returns {Array}         An array with the x and y values.
    */
-  const getCoordsFromPercent = (percent) => {
-    const x = Math.cos(2 * Math.PI * percent);
-    const y = Math.sin(2 * Math.PI * percent);
+  const getCoordsFromPercent = (percent, offset = 0, radius = 1) => {
+    const x = Math.cos(2 * Math.PI * percent + offset) * radius;
+    const y = Math.sin(2 * Math.PI * percent + offset) * radius;
 
     return [x, y];
   };
@@ -39,43 +40,72 @@ const PieChart = ({
       getCumulativeRotation.val = 0;
     }
 
-    const rotation = 360 * getCumulativeRotation.val;
+    const offset = 90;
+
+    const rotation = 360 * getCumulativeRotation.val - offset;
     getCumulativeRotation.val += percent;
 
     return rotation;
   };
 
+  const texts = [];
+
   return (
     <div className="pie-chart">
       <svg
-        width="200"
-        height="200"
+        width="400"
+        height="400"
         viewBox="-1 -1 2 2"
-        style={{ transform: 'rotate(-0.25turn)' }}
+        style={{
+          position: 'relative',
+        }}
       >
-        {debug && (<circle cx="0" cy="0" r="1" fill="white" />)}
         {values.map((val) => {
+          const radius = 0.5;
+
           const percent = val / total;
 
-          const [x, y] = getCoordsFromPercent(percent);
+          const [x, y] = getCoordsFromPercent(percent, 0, radius);
           const rotation = getCumulativeRotation(percent);
 
+          const [textX, textY] = getCoordsFromPercent(percent / 2, rotation / 360 * (2 * Math.PI), 0.75);
+
           const flag = percent > 0.5 ? 1 : 0;
+
+          const color = colorFactory.next().value;
+
+          if (options.displayValues) {
+            texts.push(
+              <text
+                x={textX}
+                y={textY}
+                fill="#777"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                style={{
+                  fontSize: '0.12px',
+                }}
+              >
+                {`${percent * 100}%`}
+              </text>
+            );
+          }
 
           return (
             <path
               key={`${x}-${y}-${rotation}`}
               d={`
-              M 1 0
-              A 1 1 0 ${flag} 1 ${x} ${y}
-              L 0 0
-              Z
-            `}
+                  M ${radius} 0
+                  A ${radius} ${radius} 0 ${flag} 1 ${x} ${y}
+                  L 0 0
+                  Z
+                `}
               transform={`rotate(${rotation})`}
-              fill={colorFactory.next().value}
+              fill={color}
             />
           );
         })}
+        {texts}
       </svg>
     </div>
   );
@@ -84,10 +114,19 @@ PieChart.propTypes = {
   // Values supplied to make up the chart
   values: PropTypes.arrayOf(PropTypes.number).isRequired,
 
+  // Display options for the chart
+  options: PropTypes.shape({
+    // If the values should be displayed next to each cut
+    displayValues: PropTypes.bool,
+  }),
+
   // Enables a background circle for debugging
   debug: PropTypes.bool,
 };
 PieChart.defaultProps = {
+  options: {
+    displayValues: false,
+  },
   debug: false,
 };
 

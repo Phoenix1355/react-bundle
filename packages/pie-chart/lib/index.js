@@ -4,7 +4,7 @@
   (global = global || self, global.glitch = factory(global.React, global.PropTypes));
 }(this, function (React, PropTypes) { 'use strict';
 
-  React = React && React.hasOwnProperty('default') ? React['default'] : React;
+  var React__default = 'default' in React ? React['default'] : React;
   PropTypes = PropTypes && PropTypes.hasOwnProperty('default') ? PropTypes['default'] : PropTypes;
 
   function _arrayWithHoles(arr) {
@@ -826,6 +826,7 @@
 
   var PieChart = function PieChart(_ref) {
     var values = _ref.values,
+        options = _ref.options,
         debug = _ref.debug;
     var total = values.reduce(function (a, b) {
       return a + b;
@@ -839,8 +840,10 @@
      */
 
     var getCoordsFromPercent = function getCoordsFromPercent(percent) {
-      var x = Math.cos(2 * Math.PI * percent);
-      var y = Math.sin(2 * Math.PI * percent);
+      var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      var radius = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+      var x = Math.cos(2 * Math.PI * percent + offset) * radius;
+      var y = Math.sin(2 * Math.PI * percent + offset) * radius;
       return [x, y];
     };
     /**
@@ -856,71 +859,98 @@
         getCumulativeRotation.val = 0;
       }
 
-      var rotation = 360 * getCumulativeRotation.val;
+      var offset = 90;
+      var rotation = 360 * getCumulativeRotation.val - offset;
       getCumulativeRotation.val += percent;
       return rotation;
     };
 
-    return React.createElement("div", {
+    var texts = [];
+    return React__default.createElement("div", {
       className: "pie-chart",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 54
       },
       __self: this
-    }, React.createElement("svg", {
-      width: "200",
-      height: "200",
+    }, React__default.createElement("svg", {
+      width: "400",
+      height: "400",
       viewBox: "-1 -1 2 2",
       style: {
-        transform: 'rotate(-0.25turn)'
+        position: 'relative'
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 55
       },
       __self: this
-    }, debug && React.createElement("circle", {
-      cx: "0",
-      cy: "0",
-      r: "1",
-      fill: "white",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 56
-      },
-      __self: this
-    }), values.map(function (val) {
+    }, values.map(function (val) {
+      var radius = 0.5;
       var percent = val / total;
 
-      var _getCoordsFromPercent = getCoordsFromPercent(percent),
+      var _getCoordsFromPercent = getCoordsFromPercent(percent, 0, radius),
           _getCoordsFromPercent2 = _slicedToArray(_getCoordsFromPercent, 2),
           x = _getCoordsFromPercent2[0],
           y = _getCoordsFromPercent2[1];
 
       var rotation = getCumulativeRotation(percent);
+
+      var _getCoordsFromPercent3 = getCoordsFromPercent(percent / 2, rotation / 360 * (2 * Math.PI), 0.75),
+          _getCoordsFromPercent4 = _slicedToArray(_getCoordsFromPercent3, 2),
+          textX = _getCoordsFromPercent4[0],
+          textY = _getCoordsFromPercent4[1];
+
       var flag = percent > 0.5 ? 1 : 0;
-      return React.createElement("path", {
+      var color = colorFactory.next().value;
+
+      if (options.displayValues) {
+        texts.push(React__default.createElement("text", {
+          x: textX,
+          y: textY,
+          fill: "#777",
+          textAnchor: "middle",
+          dominantBaseline: "middle",
+          style: {
+            fontSize: '0.12px'
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79
+          },
+          __self: this
+        }, "".concat(percent * 100, "%")));
+      }
+
+      return React__default.createElement("path", {
         key: "".concat(x, "-").concat(y, "-").concat(rotation),
-        d: "\n              M 1 0\n              A 1 1 0 ".concat(flag, " 1 ").concat(x, " ").concat(y, "\n              L 0 0\n              Z\n            "),
+        d: "\n                  M ".concat(radius, " 0\n                  A ").concat(radius, " ").concat(radius, " 0 ").concat(flag, " 1 ").concat(x, " ").concat(y, "\n                  L 0 0\n                  Z\n                "),
         transform: "rotate(".concat(rotation, ")"),
-        fill: colorFactory.next().value,
+        fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 95
         },
         __self: this
       });
-    })));
+    }), texts));
   };
 
   PieChart.propTypes = {
     // Values supplied to make up the chart
     values: PropTypes.arrayOf(PropTypes.number).isRequired,
+    // Display options for the chart
+    options: PropTypes.shape({
+      // If the values should be displayed next to each cut
+      displayValues: PropTypes.bool
+    }),
     // Enables a background circle for debugging
     debug: PropTypes.bool
   };
   PieChart.defaultProps = {
+    options: {
+      displayValues: false
+    },
     debug: false
   };
 
